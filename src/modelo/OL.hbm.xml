@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+		
+<hibernate-mapping>
+   <class name="modelo.OL">
+      <!-- Identificador da classe -->
+        <id name="id" type="java.lang.Long">
+    	    <generator class="sequence">
+        		<param name="sequence">OL_ID</param>
+	        </generator>
+		</id>
+      <!-- Propriedades da classe -->  
+      <many-to-one name="Material" column="MATERIAL_ID"/>
+      
+      <set name="lotes" table="LOTE_OL">
+	      <key column="OL_ID"/>
+    	  <many-to-many class="modelo.Lote" column="LOTE_ID" unique="true"/>
+      </set>
+      
+   </class>
+</hibernate-mapping>

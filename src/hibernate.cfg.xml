@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> 
+        
+ <hibernate-configuration>
+     <session-factory >
+ 
+ 		<!-- local connection properties -->
+         <property name="connection.driver_class">org.firebirdsql.jdbc.FBDriver</property>
+         <property name="connection.url">jdbc:firebirdsql:localhost/3050:f:\java\cco511\jmrp\bd\jmrp.fdb</property>
+         <property name="connection.username">jmrp</property>
+         <property name="connection.password">takttime</property>
+         <property name="dialect">org.hibernate.dialect.FirebirdDialect</property>
+         
+         <property name="hibernate.statement_cache.size">0</property> 
+         <property name="hibernate.show_sql">false</property>
+         
+         <mapping resource="modelo/Material.hbm.xml"/>
+         <mapping resource="modelo/Lote.hbm.xml"/>         
+         <mapping resource="modelo/OL.hbm.xml"/>         
+         <mapping resource="modelo/Programacao.hbm.xml"/>
+
+     </session-factory>    
+ </hibernate-configuration>
